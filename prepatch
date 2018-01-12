@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+root=`pwd`
+info_txt=`echo -e "\033[33m[INFO]\033[0m"`
+
+echo "$info_txt applying the patch add_milliseconds_to_error_log for nginx"
+patch -p1 < $root/patches/nginx-1.9.15-add_milliseconds_to_error_log.patch || exit 1
+echo
